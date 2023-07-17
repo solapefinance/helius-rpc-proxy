@@ -1,3 +1,9 @@
 name = "rpc-proxy" # todo
 main = "./src/index.ts"
 compatibility_date = "2022-05-03"
+
+[env.staging]
+workers_dev = true
+
+[env.production]
+name = "rpc-proxy"
