@@ -15,8 +15,8 @@ export default {
 		// originated from one of the domains in the `CORS_ALLOW_ORIGIN` environment variable.
 		const supportedDomains = env.CORS_ALLOW_ORIGIN ? env.CORS_ALLOW_ORIGIN.split(',') : undefined;
 		const corsHeaders: Record<string, string> = {
-			'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, OPTIONS',
-			'Access-Control-Allow-Headers': '*',
+			"Access-Control-Allow-Methods": "GET, HEAD, POST, PUT, OPTIONS",
+			"Access-Control-Allow-Headers": "*",
 		}
 		if (supportedDomains) {
 			const origin = request.headers.get('Origin')
@@ -27,7 +27,7 @@ export default {
 			corsHeaders['Access-Control-Allow-Origin'] = '*'
 		}
 
-		if (request.method === 'OPTIONS') {
+		if (request.method === "OPTIONS") {
 			return new Response(null, {
 				status: 200,
 				headers: corsHeaders,
